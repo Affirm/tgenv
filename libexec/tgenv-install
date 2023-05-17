@@ -50,7 +50,7 @@ if [ -f "${dst_path}/terragrunt" ]; then
   exit 0
 fi
 
-TGENV_ARCH="${TGENV_ARCH:-amd64}"
+TGENV_ARCH="${TGENV_ARCH:-arm64}"
 case "$(uname -s)" in
   Darwin*)
     os="darwin_${TGENV_ARCH}"
