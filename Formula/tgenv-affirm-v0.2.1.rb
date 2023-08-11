@@ -1,6 +1,5 @@
 # Documentation: https://docs.brew.sh/Formula-Cookbook
 #                https://rubydoc.brew.sh/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class TgenvAffirmV021 < Formula
   desc "Affirm's forked version of tgenv, a Terragrunt version manager"
   homepage "https://github.com/Affirm/tgenv"
@@ -8,13 +7,15 @@ class TgenvAffirmV021 < Formula
   sha256 "a7af38eac630724e2a136522aa420ef926197cb48a387512edeb60165ecfdc98"
   license ""
 
+  # Example dependency:
   # depends_on "cmake" => :build
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "echo", "'export PATH=\"$PATH:/usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin\"'", ">", "~/.zshrc"
+    # system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
