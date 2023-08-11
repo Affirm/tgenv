@@ -1,3 +1,8 @@
+## 0.2.0 (December 8, 2022)
+* Reborn the project
+* Updated offline versions
+* Improve README.md
+
 ## 0.1.0 (Jully 15, 2019)
 
 * update script

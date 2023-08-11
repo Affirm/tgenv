@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+function error_and_proceed() {
+  errors+=("${1}")
+  echo -e "tgenv: ${0}: Test Failed: ${1}" >&2
+}
+
 function error_and_die() {
   echo -e "tgenv: $(basename ${0}): \033[0;31m[ERROR] ${1}\033[0;39m" >&2
   exit 1
@@ -11,6 +16,12 @@ function warn_and_continue() {
 
 function info() {
   echo -e "\033[0;32m[INFO] ${1}\033[0;39m"
+}
+
+function debug() {
+  if [ -n "${TGENV_DEBUG}" ]; then
+    echo -e "\033[0;34m[DEBUG] ${1}\033[0;39m"
+  fi
 }
 
 # Curl wrapper to switch TLS option for each OS

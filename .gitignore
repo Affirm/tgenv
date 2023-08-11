@@ -2,3 +2,5 @@ versions/
 version
 .terragrunt-version
 bin/terragrunt-*
+## Mac things
+.DS_Store
