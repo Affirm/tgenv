@@ -1,3 +1,14 @@
+## 0.2.1 (Aug 11, 2023)
+* merge Affirm's forked repo with tgenv/tgenv
+* include Formula
+
+## 0.0.5 (May 17, 2023)
+* arm processor changes
+
+## 0.0.4 (August 13, 2022)
+* Affirm changes
+* Updated tgenv install to not install versions that are already installed
+
 ## 0.2.0 (December 8, 2022)
 * Reborn the project
 * Updated offline versions
