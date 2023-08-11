@@ -14,8 +14,7 @@ class TgenvAffirmV021 < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "echo", "'export PATH=\"$PATH:/usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin\"'", ">", "~/.zshrc"
-    # system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", *std_configure_args, "--disable-silent-rules"
     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
   end
 
