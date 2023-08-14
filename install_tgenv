@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-echo "=== Installing Affirm/tgenv ==="
-ln -s /usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin/tgenv /usr/local/bin/tgenv || >&2 echo "Failed to link /usr/local/bin/tgenv, file already exists. To override the existing file, please run \"ln -sf /usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin/tgenv /usr/local/bin/tgenv\""
-ln -s /usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin/terragrunt /usr/local/bin/terragrunt || >&2 echo "Failed to link /usr/local/bin/terragrunt, file already exists. To override the existing file, please run \"ln -sf /usr/local/Homebrew/Library/Taps/affirm/homebrew-tgenv/bin/terragrunt /usr/local/bin/terragrunt\""
