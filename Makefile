@@ -14,7 +14,7 @@ endif
 	@echo "Creating release for $$RELEASE"
 	@git tag "$$RELEASE" || >&2 echo "Tag $$RELEASE already exists, creating release for tag"
 	@mkdir -p ./dist
-	@tar -czvf "./dist/$(PKG_NAME).tar.gz" .* --exclude ./dist
+	@tar --exclude-from .gitignore --exclude-vcs -czvf "./dist/$(PKG_NAME).tar.gz" *
 	@sha256sum "./dist/$(PKG_NAME).tar.gz"
 	@gh release create --repo Affirm/tgenv "$$RELEASE" --verify-tag "./dist/$(PKG_NAME).tar.gz"
 	@echo "Please update brew formula url and sha256"
