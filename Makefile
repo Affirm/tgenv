@@ -3,8 +3,8 @@
 PKG_NAME := "tgenv-affirm"
 
 release:
-	@which gh >/dev/null || >&2 echo "Please install gh CLI with \"brew install gh\""; exit 1
-	@which brew >/dev/null || >&2 echo "Please install Homebrew https://brew.sh/"; exit 1
+	@which gh >/dev/null || (>&2 echo "Please install gh CLI with \"brew install gh\"" && exit 1)
+	@which brew >/dev/null || (echo "Please install Homebrew https://brew.sh/" && exit 1)
 ifndef RELEASE
 	$(error "RELEASE env var is undefined")
 endif
@@ -16,6 +16,6 @@ endif
 	@mkdir -p ./dist
 	@tar --exclude-from .gitignore --exclude-vcs -czvf "./dist/$(PKG_NAME).tar.gz" *
 	@sha256sum "./dist/$(PKG_NAME).tar.gz"
-	@gh release create --repo Affirm/tgenv "$$RELEASE" --verify-tag "./dist/$(PKG_NAME).tar.gz"
-	@echo "Please update brew formula url and sha256"
+	@gh release create --repo Affirm/tgenv --title "$$RELEASE" --notes-file CHANGELOG.md --verify-tag "$$RELEASE" "./dist/$(PKG_NAME).tar.gz" || >&2 echo "Release $$RELEASE already exists, doing nothing"
+	@echo "Please update brew formula: url and sha256"
 
